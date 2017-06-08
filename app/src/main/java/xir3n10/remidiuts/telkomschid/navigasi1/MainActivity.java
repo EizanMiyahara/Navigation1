@@ -18,6 +18,8 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import layout.Page2Fragment;
+
 public class MainActivity extends AppCompatActivity {
 
     /**
@@ -33,6 +35,14 @@ public class MainActivity extends AppCompatActivity {
     /**
      * The {@link ViewPager} that will host the section contents.
      */
+
+    public Fragment getItem(int position)
+    {
+        if(position==1)
+            return new Page2Fragment();
+        else
+            return PlaceholderFragment.newInstance(position + 1);
+    }
     private ViewPager mViewPager;
 
     @Override
